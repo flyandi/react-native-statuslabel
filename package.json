@@ -1,0 +1,45 @@
+{
+  "name": "react-native-statuslabel",
+  "version": "0.0.1",
+  "description": "A simple status label component with theme",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyandi/react-native-statuslabel.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "react-native",
+    "status",
+    "label",
+    "ios",
+    "android",
+    "react-component"
+  ],
+  "author": "Andy Schwarz <flyandi@yahoo.com> (http://flyandi.net)",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/flyandi/react-native-statuslabel/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/flyandi/react-native-statuslabel/issues"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "homepage": "https://github.com/flyandi/react-native-statuslabel#readme",
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "jest": "^21.2.1",
+    "react-native": "^0.49.3",
+    "react-test-renderer": "^16.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0"
+  }
+}
