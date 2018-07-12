@@ -31,7 +31,7 @@ export default class StatusLabel extends Component {
         fontFamily: PropTypes.string,
         fontSize: PropTypes.number,
         fontWeight: PropTypes.any,
-        upperCase: PropTypes.boolean,
+        upperCase: PropTypes.bool,
     }
 
     /**
