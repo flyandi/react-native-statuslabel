@@ -51,7 +51,7 @@ import StatusLabel from 'react-native-statuslabel';
 
 ```es6
 <StatusLabel
-    label={'Label Text}
+    label={'Label Text'}
 />
 ```
 
