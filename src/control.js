@@ -7,13 +7,6 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import _ from 'lodash';
 import Styles from './styles';
 
-
-export const Statuses = {
-    DISABLED: {
-        label: 'Disabled'
-    }
-}
-
 /**
  * @component
  */
@@ -28,7 +21,6 @@ export default class StatusLabel extends Component {
         borderColor: PropTypes.string,
         borderWidth: PropTypes.number,
         borderRadius: PropTypes.number,
-        contentPadding: PropTypes.number,
         inverseTextColor: PropTypes.string,
         type: PropTypes.any,
         label: PropTypes.string,
@@ -38,6 +30,8 @@ export default class StatusLabel extends Component {
         invertKeyLabel: PropTypes.bool,
         fontFamily: PropTypes.string,
         fontSize: PropTypes.number,
+        fontWeight: PropTypes.any,
+        upperCase: PropTypes.boolean,
     }
 
     /**
@@ -46,11 +40,10 @@ export default class StatusLabel extends Component {
      */
     static defaultProps = {
         backgroundColor: 'transparent',
-        borderColor: '#828186',
-        borderWidth: 1,
+        borderColor: undefined,
+        borderWidth: undefined,
         borderRadius: 3,
-        contentPadding: 10,
-        inverseTextColor: '#FFFFFF',
+        textColor: '#FFFFFF',
         type: undefined,
         label: undefined,
         style: {},
@@ -58,8 +51,10 @@ export default class StatusLabel extends Component {
         useKeyValue: undefined,
         onPress: undefined,
         theme: undefined,
-        fontSize: undefined,
+        fontSize: 11,
         fontFamily: undefined,
+        fontWeight: 'bold',
+        upperCase: true,
     }
 
     /**
@@ -70,26 +65,23 @@ export default class StatusLabel extends Component {
 
         _default: {
             margin: undefined,
-            fontSize: undefined,
-            fontFamily: undefined,
         },
 
         red: {
-            borderColor: '#d9534f'
+            backgroundColor: '#d9534f'
         },
 
         green: {
-            borderColor: '#5cb85c'
+            backgroundColor: '#5cb85c'
         },
 
         blue: {
-            borderColor: '#3F51B5'
+            backgroundColor: '#3F51B5'
         },
 
         yellow: {
-            borderColor: '#f0ad4e'
+            backgroundColor: '#f0ad4e'
         }
-
     }
     /**
      * @constructor
@@ -117,17 +109,17 @@ export default class StatusLabel extends Component {
             this.props.theme ? StatusLabel.themes[this.props.theme] : {}
         ));
 
-        const isArray = _.isArray(this.props.options);
+        const Container = this.props.onPress ? TouchableOpacity : View;
 
         return (
-            <TouchableOpacity
+            <Container
                 style={styles.labelContainer}
-                onPress={() => this.props.onPress && this.props.onPress()}
+                onPress={() => this.props.onPress && this.props.onPress()} style={styles.labelContainer}
             >
                 <Text style={styles.labelText}>
-                    {label}
+                    {this.props.upperCase && this.props.label ? this.props.label.toUpperCase() : this.props.label}
                 </Text>
-            </TouchableOpacity>
+            </Container>
         );
     }
 }

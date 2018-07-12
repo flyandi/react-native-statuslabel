@@ -2,7 +2,7 @@
 
 A simple status label control.
 
-![alt text](https://github.com/flyandi/react-native-optiongroup/raw/master/docs/default.png "react-native-optiongroup")
+![alt text](https://github.com/flyandi/react-native-statuslabel/raw/master/docs/default.png "react-native-statuslabel")
 
 
 ## Installation
@@ -25,9 +25,12 @@ yarn add react-native-statuslabel
 |`string` **`textColor`**|The text color|`#ffffff`|
 |`string` **`fontFamily`**|The font family|`undefined`|
 |`string` **`fontSize`**|The font size|`undefined`|
+|`string` **`fontWeight`**|The font weight|`bold`|
 |`string` **`label`**|The text of the label|`required`|
 |`object` **`style`**|A standard style object, refer below for more information|`undefined`|
 |`string` **`theme`**|One of the following theme strings: `red`, `yellow`, `blue` or `green`|`undefined`|
+|`boolean` **`upperCase`**|Transform label text to uppercase|`true`|
+
 
 ## Events
 
@@ -35,19 +38,12 @@ yarn add react-native-statuslabel
 |---|---|
 |**`onPress`**|Executed when the user touches the status label|
 
-## Constants
-
-| Prop | Description |
-|---|---|
-|**`onPress`**|Executed when the user touches the status label|
-
-
 ## Examples
 
 Import the component:
 
 ```es6
-import StatusLabel, {Statuses} from 'react-native-statuslabel';
+import StatusLabel from 'react-native-statuslabel';
 ```
 
 
@@ -55,14 +51,11 @@ import StatusLabel, {Statuses} from 'react-native-statuslabel';
 
 ```es6
 <StatusLabel
-    type={Statuses.IN_PROGRESS}
+    label={'Label Text}
 />
 ```
 
 **Theme Styles**
-
-![alt text](https://github.com/flyandi/react-native-optiongroup/raw/master/docs/themes.png "react-native-optiongroup")
-
 
 ```es6
 <StatusLabel

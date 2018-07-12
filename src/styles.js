@@ -9,7 +9,7 @@ import { StyleSheet} from 'react-native';
  */
 export default props => StyleSheet.create({
 
-    buttonContainer: {
+    labelContainer: {
         flex: 1,
         flexDirection: 'row',
         marginTop: 10,
@@ -20,38 +20,16 @@ export default props => StyleSheet.create({
         overflow: 'hidden',
         backgroundColor: props.backgroundColor,
         margin: props.margin,
+        paddingVertical: 2,
+        paddingHorizontal: 4,
     },
 
-    buttonItem: {
-        flex: 1,
-        padding: props.contentPadding,
-        borderLeftWidth: props.borderWidth,
-        borderColor: props.borderColor,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
 
-    buttonItemText: {
+    labelText: {
         textAlign: 'center',
         fontSize: props.fontSize,
         fontFamily: props.fontFamily,
-        color: props.borderColor,
+        fontWeight: props.fontWeight,
+        color: props.textColor,
     },
-
-    selectedButtonItem: {
-        backgroundColor: props.borderColor,
-        flex: 1,
-        padding: props.contentPadding,
-        borderLeftWidth: props.borderWidth,
-        borderColor: props.borderColor,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    selectedButtonItemText: {
-        color: props.inverseTextColor,
-        textAlign: 'center',
-        fontSize: props.fontSize,
-        fontFamily: props.fontFamily,
-    }
 });
